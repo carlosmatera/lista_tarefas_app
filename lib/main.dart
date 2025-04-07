@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:todoapp/app/home/home_page.dart';
 import 'package:todoapp/features/home/pages/home_page.dart';
+import 'package:todoapp/features/home/pages/splash_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,12 @@ class _MyAppState extends State<MyApp> {
       title: 'Supermercado',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
-      home: const HomePage(),
+      // home: const HomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const SplashPage(),
+        '/home': (context) => const HomePage(),
+      },
       // home:  HomePage(title: 'Tauste', onToggleTheme: (){},),
     );
   }
